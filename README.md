@@ -1,1 +1,22 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/PAiQDgnZ)
+# Deni Dwi Arta: Milestone 2 - RevoU Fullstack Software Engineering Program
+
+## How to Run
+
+### Development Server
+Start the local development server with hot-reload:
+```bash
+npm run dev
+```
+
+### Build for Production
+Create an optimized production build:
+```bash
+npm run build
+```
+The output will be in the `dist/` directory.
+
+### Preview Production Build
+Locally preview the production build:
+```bash
+npm run preview
+```
