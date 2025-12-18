@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/style.css" />
+    <title>Bulls and Cows Game</title>
+    <meta name="description"
+        content="A classic number guessing game. Guess the 4-digit secret number using logic and deduction!" />
+</head>
+
+<body>
+    <div id="app">
+        <!-- Game Container -->
+        <div class="game-container">
+            <!-- Header -->
+            <header class="game-header">
+                <h1>🐂 Bulls & Cows 🐄</h1>
+                <p class="game-subtitle">Guess the 4-digit secret number!</p>
+            </header>
+
+            <!-- Instructions -->
+            <div class="instructions">
+                <h2>How to Play</h2>
+                <ul>
+                    <li>Think of a 4-digit number (digits 1-9, all unique)</li>
+                    <li><strong>BULL</strong> = Correct digit in correct position</li>
+                    <li><strong>COW</strong> = Correct digit in wrong position</li>
+                    <li>You have <strong>11 attempts</strong> to guess the number</li>
+                    <li>Get <strong>4 BULLS</strong> to win!</li>
+                </ul>
+            </div>
+
+            <!-- Attempts Counter -->
+            <div class="attempts-display">
+                <span class="attempts-label">Attempts Remaining:</span>
+                <span id="attempts-count" class="attempts-count">11</span>
+            </div>
+
+            <!-- Input Section -->
+            <div class="input-section">
+                <input type="number" id="guess-input" class="guess-input" maxlength="4" placeholder="Enter 4 digits..."
+                    autocomplete="off" />
+                <button id="submit-btn" class="btn btn-primary">Guess!</button>
+            </div>
+
+            <!-- Error Message -->
+            <div id="input-error" class="input-error" style="display: none;"></div>
+
+            <!-- Game Message (Win/Lose) -->
+            <div id="game-message" class="game-message" style="display: none;"></div>
+
+            <!-- Result History -->
+            <div class="history-section">
+                <h3>Your Guesses</h3>
+                <div id="result-history" class="result-history"></div>
+            </div>
+
+            <!-- Restart Button -->
+            <button id="restart-btn" class="btn btn-secondary">🔄 New Game</button>
+
+            <!-- Back Link -->
+            <a href="/" class="back-link">← Back to Game Hub</a>
+        </div>
+    </div>
+
+    <script type="module" src="/src/scripts/bulls-and-cows.ts"></script>
+</body>
+
+</html>

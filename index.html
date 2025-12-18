@@ -5,12 +5,54 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/styles/style.css" />
+  <link rel="stylesheet" href="/src/styles/index.css" />
   <title>RevoFun GameHub</title>
+  <meta name="description" content="A collection of fun games built with TypeScript for learning!" />
 </head>
 
 <body>
-  <div id="app"></div>
-  <script type="module" src="/src/main.ts"></script>
+  <div id="app">
+    <div class="landing-container">
+      <!-- Header -->
+      <header class="landing-header">
+        <h1>🎮 RevoFun GameHub</h1>
+        <p class="landing-subtitle">Choose a game and have fun!</p>
+      </header>
+
+      <!-- Games Grid -->
+      <div class="games-grid">
+        <!-- Game 1: Bulls and Cows -->
+        <a href="/src/pages/bulls-and-cows.html" class="game-card">
+          <div class="game-icon">🐂</div>
+          <h2>Bulls &amp; Cows</h2>
+          <p>Guess the 4-digit secret number using logic and deduction!</p>
+          <span class="game-tag">Logic</span>
+        </a>
+
+        <!-- Game 2: Number Guesser -->
+        <a href="/src/pages/number-guesser.html" class="game-card">
+          <div class="game-icon">🔢</div>
+          <h2>Number Guesser</h2>
+          <p>Guess the mystery number between 1-100. Higher or lower?</p>
+          <span class="game-tag">Classic</span>
+        </a>
+
+        <!-- Game 3: Memory Match -->
+        <a href="/src/pages/memory-match.html" class="game-card">
+          <div class="game-icon">🧠</div>
+          <h2>Memory Match</h2>
+          <p>Test your memory by matching pairs of cards!</p>
+          <span class="game-tag">Memory</span>
+        </a>
+      </div>
+
+      <!-- Footer -->
+      <footer class="landing-footer">
+        <p>Made with ❤️ for learning TypeScript</p>
+      </footer>
+    </div>
+  </div>
 </body>
 
 </html>
