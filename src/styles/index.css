@@ -1,7 +1,3 @@
-/* ============================================
-   Index/Landing Page Styles
-   ============================================ */
-
 .landing-container {
     max-width: 900px;
     margin: 0 auto;
@@ -27,12 +23,7 @@
 }
 
 /* Games Grid */
-.games-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
+.games-grid {}
 
 /* Game Card */
 .game-card {
