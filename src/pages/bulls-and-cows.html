@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="/src/styles/bulls-and-cows.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Barrio&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barriecito&family=Barrio&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <title>Bulls and Cows Game</title>
     <meta name="description"
         content="A classic number guessing game. Guess the 4-digit secret number using logic and deduction!" />
@@ -19,7 +21,8 @@
     <div id="app">
         <div class="game-container">
             <header class="game-header">
-                <h1>🐂 Bulls & Cows 🐄</h1>
+                <a href="/" class="back-link" style="margin-top: 0; margin-bottom: 2rem;">← HOME</a>
+                <h1>Bulls & Cows</h1>
                 <p class="game-subtitle">Guess the 4-digit secret number!</p>
             </header>
 
@@ -35,32 +38,33 @@
             </div>
 
             <div class="attempts-display">
-                <span class="attempts-label">Attempts Remaining:</span>
+                <span class="attempts-label">ATTEMPTS LEFT:</span>
                 <span id="attempts-count" class="attempts-count">11</span>
             </div>
 
             <div class="input-section">
-                <input type="number" id="guess-input" class="guess-input" maxlength="4" placeholder="Enter 4 digits..."
-                    autocomplete="off" />
-                <button id="submit-btn" class="btn btn-primary">Guess!</button>
+                <!-- Using type="text" pattern="\d*" to ensure number keyboard mobile but allow maxLength -->
+                <input type="text" inputmode="numeric" id="guess-input" class="guess-input" maxlength="4"
+                    placeholder="????" autocomplete="off" />
             </div>
 
-            <div id="input-error" class="input-error" style="display: none;"></div>
+            <button id="submit-btn" class="btn btn-primary"
+                style="width: 100%; max-width: 200px; margin: 0 auto; display: block;">GUESS!</button>
 
-            <div id="game-message" class="game-message" style="display: none;"></div>
+            <div id="input-error" class="input-error" style="display: none; margin-top: 1rem;"></div>
+
+            <div id="game-message" class="game-message" style="display: none; margin-top: 1rem;"></div>
 
             <div class="history-section">
-                <h3>Your Guesses</h3>
+                <h3>YOUR GUESSES</h3>
                 <div id="result-history" class="result-history"></div>
             </div>
 
-            <button id="restart-btn" class="btn btn-secondary">🔄 New Game</button>
-
-            <a href="/" class="back-link">← Back to Game Hub</a>
+            <button id="restart-btn" class="btn btn-secondary">NEW GAME</button>
         </div>
     </div>
 
-    <script type="module" src="/src/scripts/bulls-and-cows.ts"></script>
+    <script type="module" src="/src/scripts/bulls-and-cows/bulls-and-cows.ts"></script>
 </body>
 
 </html>

@@ -1,73 +1,166 @@
+// Game State
 let gameLevel: number = 1;
-let playerLives: number = 10;
+const maxLevel: number = 12;
 
 interface Card {
     id: number;
+    imagePath: string;
     isFlipped: boolean;
+    isMatched: boolean;
 }
 
-function generateCardSet(gameLevel: number, multiplier: number): Card[] {
-    const cardSet: Card[] = [];
+const CARD_BACK = '/src/assets/card-game/card_back.png';
+let deck: Card[] = [];
+let firstCardIndex: number | null = null;
+let secondCardIndex: number | null = null;
+let isProcessing: boolean = false;
 
-    for (let i = 1; i <= gameLevel; i++) {
-        for (let j = 0; j < multiplier; j++) {
-            cardSet.push({ id: i, isFlipped: false });
+// DOM Elements
+const cardGrid = document.querySelector('.card-grid') as HTMLElement;
+const levelValue = document.getElementById('game-level') as HTMLElement;
+
+
+// Initializes a new game level
+function initGame(): void {
+    isProcessing = false;
+    firstCardIndex = null;
+    secondCardIndex = null;
+    if (levelValue) levelValue.textContent = gameLevel.toString();
+
+    const pairsCount = gameLevel + 1;
+    deck = generateCardSet(pairsCount);
+    renderBoard();
+}
+
+
+// Generates and shuffles a set of cards
+function generateCardSet(pairsCount: number): Card[] {
+    const cards: Card[] = [];
+
+    for (let i = 1; i <= pairsCount; i++) {
+        // We have 12 assets max, so we cycle through them using modulo
+        // (i-1) % 12 gives 0-11, add 1 makes 1-12
+        const assetIndex = ((i - 1) % 12) + 1;
+        const imageId = assetIndex.toString().padStart(2, '0');
+        const imagePath = `/src/assets/card-game/card_${imageId}.png`;
+
+        // Add two cards for each pair
+        for (let j = 0; j < 2; j++) {
+            cards.push({
+                id: i,
+                imagePath: imagePath,
+                isFlipped: false,
+                isMatched: false
+            });
         }
     }
-    return cardSet.sort(() => Math.random() - 0.5);
+
+    // Shuffle the deck
+    return cards.sort(() => Math.random() - 0.5);
 }
 
-let deck: Card[] = generateCardSet(gameLevel, 2);
+// Renders the cards to the game board
+function renderBoard(): void {
+    if (!cardGrid) return;
 
-let firstCard: Card | null = null;
-let secondCard: Card | null = null;
+    cardGrid.innerHTML = '';
 
-function flipFirstCard(index: number): void {
-    const selectedCard = deck[index];
+    deck.forEach((card, index) => {
+        const li = document.createElement('li');
+        li.className = 'card';
 
-    if (selectedCard.isFlipped === false) {
-        selectedCard.isFlipped = true;
-        firstCard = selectedCard;
-    }
-}
+        // If flipped or matched, show front content
+        // If not, show back
+        const imageSrc = (card.isFlipped || card.isMatched) ? card.imagePath : CARD_BACK;
 
-function winGame(): void {
-    const isAllFlipped = deck.every(card => card.isFlipped === true);
-    if (isAllFlipped) {
-        console.log("🏆 SELAMAT! Kamu menang! Semua pasangan ditemukan.");
-    }
-}
-
-function checkMatch(): void {
-    if (firstCard !== null && secondCard !== null) {
-        if (firstCard.id === secondCard.id) {
-            console.log("Match!");
-            firstCard.isFlipped = true;
-            secondCard.isFlipped = true;
-            winGame();
-        } else {
-            console.log("Not a match.");
-            firstCard.isFlipped = false;
-            secondCard.isFlipped = false;
+        // Add visual style for matched cards
+        if (card.isMatched) {
+            li.style.opacity = '0.5';
+            li.style.cursor = 'default';
         }
-        firstCard = null;
-        secondCard = null;
-    }
+
+        li.innerHTML = `<img src="${imageSrc}" alt="Card">`;
+
+        // Only add click listener if not matched
+        if (!card.isMatched) {
+            li.addEventListener('click', () => handleCardClick(index));
+        }
+
+        cardGrid.appendChild(li);
+    });
 }
 
-function flipSecondCard(index: number): void {
-    const selectedCard = deck[index];
+/**
+ * Handles card clicking logic
+ */
+function handleCardClick(index: number): void {
+    if (isProcessing) return;
+    if (deck[index].isFlipped || deck[index].isMatched) return;
+    if (index === firstCardIndex) return;
 
-    if (selectedCard.isFlipped === false) {
-        selectedCard.isFlipped = true;
-        secondCard = selectedCard;
+    // Flip the card
+    deck[index].isFlipped = true;
+    renderBoard();
+
+    if (firstCardIndex === null) {
+        firstCardIndex = index;
+    } else {
+        secondCardIndex = index;
+        isProcessing = true;
         checkMatch();
+    }
+}
+
+/**
+ * Checks if the two flipped cards match
+ */
+function checkMatch(): void {
+    if (firstCardIndex === null || secondCardIndex === null) return;
+
+    const card1 = deck[firstCardIndex];
+    const card2 = deck[secondCardIndex];
+
+    if (card1.id === card2.id) {
+        // Match!
+        setTimeout(() => {
+            card1.isMatched = true;
+            card2.isMatched = true;
+            firstCardIndex = null;
+            secondCardIndex = null;
+            isProcessing = false;
+            renderBoard();
+            checkWin();
+        }, 500);
+    } else {
+        // Not a match
+        setTimeout(() => {
+            card1.isFlipped = false;
+            card2.isFlipped = false;
+            firstCardIndex = null;
+            secondCardIndex = null;
+            isProcessing = false;
+            renderBoard();
+        }, 1000);
+    }
+}
+
+/**
+ * Checks if all pairs have been matched
+ */
+function checkWin(): void {
+    const allMatched = deck.every(card => card.isMatched);
+    if (allMatched) {
+        setTimeout(() => {
+            alert(`Level ${gameLevel} Complete! Next Level >>`);
+            nextLevel();
+        }, 500);
     }
 }
 
 function nextLevel(): void {
     gameLevel++;
-    deck = generateCardSet(gameLevel, 2);
-    firstCard = null;
-    secondCard = null;
+    initGame();
 }
+
+// Start the game
+initGame();

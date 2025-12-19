@@ -15,7 +15,7 @@
 }
 
 .landing-subtitle {
-    color: #666;
+    color: white;
     font-size: 1.2rem;
 }
 
@@ -36,6 +36,7 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .game-card::before {
@@ -86,7 +87,7 @@
 .game-tag {
     font-size: 0.75rem;
     padding: 0.3rem 0.8rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #759CF7;
     border-radius: 20px;
     color: white;
     font-weight: 500;
@@ -108,4 +109,11 @@ body {
 .landing-header h1 {
     font-family: 'Barrio', cursive;
     color: #FBFF00;
+}
+
+#game-card-gallery {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    justify-content: center;
 }
