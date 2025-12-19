@@ -117,4 +117,4 @@ out
 .pnp.*
 
 # Others
-.local_documentations/
+local_documentations/
