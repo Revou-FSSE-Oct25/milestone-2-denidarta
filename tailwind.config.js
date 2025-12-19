@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx,html}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        barriecito: ['Barriecito', 'system-ui'],
+        barrio: ['Barrio', 'system-ui'],
+      },
+    },
   },
   plugins: [],
 }

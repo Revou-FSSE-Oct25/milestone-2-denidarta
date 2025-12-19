@@ -11,10 +11,7 @@
 .landing-header h1 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #FBFF00;
 }
 
 .landing-subtitle {
@@ -31,7 +28,7 @@
     flex-direction: column;
     align-items: center;
     padding: 2rem 1.5rem;
-    background: rgba(0, 0, 0, 0.03);
+    background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 16px;
     text-decoration: none;
@@ -102,4 +99,13 @@
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     color: #666;
     font-size: 0.9rem;
+}
+
+body {
+    background-color: #19ABFF;
+}
+
+.landing-header h1 {
+    font-family: 'Barrio', cursive;
+    color: #FBFF00;
 }
