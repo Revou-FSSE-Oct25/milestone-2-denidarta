@@ -2,6 +2,9 @@
 
 ## How to Run
 
+### Game Demo
+to access game demo, please visit the following link:  https://astounding-shortbread-4bfeb2.netlify.app/
+
 ### Development Server
 Start the local development server with hot-reload:
 ```bash
