@@ -38,8 +38,6 @@ function generateCardSet(pairsCount: number): Card[] {
     const cards: Card[] = [];
 
     for (let i = 1; i <= pairsCount; i++) {
-        // We have 12 assets max, so we cycle through them using modulo
-        // (i-1) % 12 gives 0-11, add 1 makes 1-12
         const assetIndex = ((i - 1) % 12) + 1;
         const imageId = assetIndex.toString().padStart(2, '0');
         const imagePath = `/assets/card-game/card_${imageId}.png`;

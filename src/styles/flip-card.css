@@ -74,3 +74,18 @@ body {
     height: 100%;
     object-fit: contain;
 }
+
+#game-instructions {
+    color: white;
+    font-size: 1.24rem;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+#back-to-home {
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: sans-serif;
+}
