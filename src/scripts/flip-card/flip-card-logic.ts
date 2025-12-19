@@ -9,7 +9,7 @@ interface Card {
     isMatched: boolean;
 }
 
-const CARD_BACK = '/src/assets/card-game/card_back.png';
+const CARD_BACK = '/assets/card-game/card_back.png';
 let deck: Card[] = [];
 let firstCardIndex: number | null = null;
 let secondCardIndex: number | null = null;
@@ -42,7 +42,7 @@ function generateCardSet(pairsCount: number): Card[] {
         // (i-1) % 12 gives 0-11, add 1 makes 1-12
         const assetIndex = ((i - 1) % 12) + 1;
         const imageId = assetIndex.toString().padStart(2, '0');
-        const imagePath = `/src/assets/card-game/card_${imageId}.png`;
+        const imagePath = `/assets/card-game/card_${imageId}.png`;
 
         // Add two cards for each pair
         for (let j = 0; j < 2; j++) {
