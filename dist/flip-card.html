@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Barrio&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles/flip-card.css" />
+    <title>RevoFun: That Card Game</title>
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div
+        style="display: flex; flex-direction: column; min-height: 100vh; max-width: 90rem; margin: 0 auto; padding: 2rem 3rem;">
+
+        <!-- Back to Home Link -->
+        <div style="margin-bottom: 1.5rem;">
+            <a href="/" class="home-link">
+                &lt; HOME
+            </a>
+        </div>
+
+        <!-- Title and Level Container -->
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding: 0 1rem;">
+            <h1 class="game-title">
+                THAT CARD GAME
+            </h1>
+            <h2 class="game-level">
+                LEVEL: <span id="game-level">10</span>
+            </h2>
+        </div>
+
+        <!-- Game Board -->
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div class="game-board">
+                <ul class="card-grid">
+
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+
+                    <!-- Row 3 -->
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+
+                    <!-- Row 4 -->
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                    <li class="card">
+                        <img src="/src/assets/card-game/card_back.png" alt="Card">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/scripts/flip-card/flip-card-logic.ts"></script>
+</body>
+
+</html>
