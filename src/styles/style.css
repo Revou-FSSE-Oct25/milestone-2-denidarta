@@ -3,12 +3,58 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* Typography */
+  --display-font: "Barrio", cursive;
+  --sans-font: "Inter", sans-serif;
+  --mono-font: monospace;
+
+  /* Colors - Brand */
+  --brand-blue: #1480bf;
+  --brand-blue-light: #759cf7;
+  --brand-yellow: #fbff00;
+  --brand-yellow-dark: #e6ea00;
+  --brand-yellow-shadow: #c4c700;
+
+  /* Colors - Backgrounds */
+  --page-background: #19abff;
+  --container-background: #ffffff;
+  --game-board-bg: #93f4d8;
+  --bg-white-dim: rgba(255, 255, 255, 0.1);
+  --bg-white-dim-strong: rgba(255, 255, 255, 0.9);
+  --bg-hover-light: #f0f9ff;
+
+  /* Colors - Text */
+  --text-primary: #213547;
+  --text-secondary: #666666;
+  --text-white: #ffffff;
+  --text-white-dim: rgba(255, 255, 255, 0.9);
+  --link-color: #646cff;
+  --link-hover: #747bff;
+
+  /* Colors - Status */
+  --status-success-bg: #86efac;
+  --status-success-text: #166534;
+  --status-success-border: #22c55e;
+
+  --status-error-bg: #fecaca;
+  --status-error-text: #dc2626;
+  --status-error-border: #fca5a5;
+  --status-error-border-strong: #ef4444;
+  --status-error-text-strong: #991b1b;
+
+  /* Borders & Shadows */
+  --border-white-dim: rgba(255, 255, 255, 0.2);
+  --shadow-text: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* Global defaults */
+  font-family: var(--sans-font);
   line-height: 1.5;
   font-weight: 400;
 
-  color: #213547;
-  background-color: #ffffff;
+  color: var(--text-primary);
+  background-color: var(--page-background);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,15 +62,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
+/* a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--link-color);
   text-decoration: inherit;
 }
 
 a:hover {
-  color: #747bff;
-}
+  color: var(--link-hover);
+} */
 
 body {
   margin: 0;
@@ -32,9 +78,11 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: var(--sans-font);
 }
 
 h1 {
+  font-family: var(--display-font);
   font-size: 3.2em;
   line-height: 1.1;
 }
@@ -59,15 +107,13 @@ button {
 }
 
 button:hover {
-  border-color: #646cff;
+  border-color: var(--link-color);
 }
 
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-
 
 /* ============================================
    Coming Soon Page Styles
@@ -89,7 +135,6 @@ button:focus-visible {
 }
 
 @keyframes pulse {
-
   0%,
   100% {
     transform: scale(1);
@@ -111,12 +156,12 @@ button:focus-visible {
 
 .coming-soon-text {
   font-size: 1.5rem;
-  color: #666;
+  color: var(--text-secondary);
   margin-bottom: 0.5rem;
 }
 
 .coming-soon-desc {
   font-size: 1rem;
-  color: #666;
+  color: var(--text-secondary);
   margin-bottom: 2rem;
 }

@@ -119,3 +119,5 @@ out
 # Others
 local_documentations/
 .agent/
+*storybook.log
+storybook-static

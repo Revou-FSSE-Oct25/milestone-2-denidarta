@@ -1,96 +1,92 @@
 /* Custom styles for flip card game */
 body {
-    background-color: #19ABFF;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
+  background-color: var(--page-background);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 2rem 3rem;
 }
 
 .game-title {
-    font-family: 'Barrio', cursive;
-    color: #FBFF00;
-    font-size: clamp(2rem, 5vw, 4rem);
-    margin: 0;
+  font-family: var(--display-font);
+  color: var(--brand-yellow);
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin: 0;
 }
 
 .game-level {
-    font-family: 'Barrio', cursive;
-    color: #FBFF00;
-    font-size: clamp(1.5rem, 4vw, 3rem);
-    margin: 0;
+  font-family: var(--display-font);
+  color: var(--brand-yellow);
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  margin: 0;
 }
 
 .home-link {
-    color: white;
-    font-size: 1.1rem;
-    text-decoration: none;
-    font-weight: 500;
+  color: var(--text-white);
+  font-size: 1.1rem;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .home-link:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .game-board {
-    background-color: #93F4D8;
-    padding: 1rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    max-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  background-color: var(--game-board-bg);
+  padding: 1rem;
+  box-shadow: var(--shadow-lg);
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .card-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 0.75rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-shrink: 1;
-    height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-shrink: 1;
+  height: 100%;
 }
 
 .card {
-    background-color: white;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.2s;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  background-color: var(--container-background);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: var(--shadow-sm);
 }
 
 .card:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 #game-instructions {
-    color: white;
-    font-size: 1.24rem;
-    font-family: sans-serif;
-    font-weight: 500;
-}
-
-#back-to-home {
-    color: white;
-    font-size: 1.1rem;
-    text-decoration: none;
-    font-weight: 500;
-    font-family: sans-serif;
-}
-
-#back-to-home:hover {
-    opacity: 0.8;
-    color:
+  color: var(--text-white);
+  font-size: 1.24rem;
+  font-family: var(--sans-font);
+  font-weight: 500;
 }
