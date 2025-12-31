@@ -8,6 +8,8 @@ export class gameCard extends LitElement {
   @property({ type: String }) title = "";
   @property({ type: String }) description = "";
   @property({ type: String }) tag = "";
+  @property({ type: String }) image = "";
+  @property({ type: String }) alt = "";
 
   static styles = css`
     .game-card {
@@ -27,6 +29,7 @@ export class gameCard extends LitElement {
       height: 100%;
     }
 
+    // Top border hover effect.
     .game-card::before {
       content: "";
       position: absolute;
@@ -85,7 +88,9 @@ export class gameCard extends LitElement {
   render() {
     return html`
       <a href="${this.href}" class="game-card">
-        <div class="game-icon">${this.icon}</div>
+        <div>
+          ${this.image? `<img src=$this.image} alt=${this.alt} />` : `${this.icon}}
+        </div>
         <h2>${this.title}</h2>
         <p>${this.description}</p>
         <span class="game-tag">${this.tag}</span>

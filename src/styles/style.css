@@ -7,6 +7,7 @@
   --display-font: "Barrio", cursive;
   --sans-font: "Inter", sans-serif;
   --mono-font: monospace;
+  --game-font: "Luckiest Guy", cursive;
 
   /* Colors - Brand */
   --brand-blue: #1480bf;
@@ -16,7 +17,7 @@
   --brand-yellow-shadow: #c4c700;
 
   /* Colors - Backgrounds */
-  --page-background: #19abff;
+  --page-background: rgb(251, 251, 253);
   --container-background: #ffffff;
   --game-board-bg: #93f4d8;
   --bg-white-dim: rgba(255, 255, 255, 0.1);
@@ -75,6 +76,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
+  flex-direction: column;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
