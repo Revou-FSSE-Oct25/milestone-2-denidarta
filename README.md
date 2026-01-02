@@ -1,41 +1,73 @@
-# Deni Dwi Arta: Milestone 2 - RevoU Fullstack Software Engineering Program
+# Revo Fun Gaming Hub
 
-## How to Run
+Milestone 2 - RevoU Fullstack Software Engineering Program. This project is a collection of mini-games built with modern web technologies, showcasing a component-based architecture and a sleek, interactive user experience.
 
-### Game Demo
+## 🚀 Demo
 
-to access game demo, please visit the following link: [The Demo Here](https://astounding-shortbread-4bfeb2.netlify.app/)
+Experience the games live: [Live Demo](https://astounding-shortbread-4bfeb2.netlify.app/)
 
-### Contributing To The Project
+## 🛠 Tech Stack
 
-To contribut to this project, you need to install some dependencies by running
+- **Core Framework:** [Lit](https://lit.dev/) (Web Components)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) & [PostCSS](https://postcss.org/)
+- **Testing:** [Vitest](https://vitest.dev/)
+- **Code Quality:** [Prettier](https://prettier.io/)
+
+## 🎮 Key Features
+
+- **Bulls and Cows:** A logic-based code-breaking game where you guess a 4-digit secret number.
+- **Memory Flip Card:** Challenge your memory by finding pairs of matching cards.
+- **Rock Paper Scissors:** A classic game against the AI with smooth animations and score tracking.
+- **Responsive Design:** Optimized for both desktop and mobile devices.
+- **Interactive UI:** Dynamic feedback and micro-animations for an engaging experience.
+
+## 🏗 Project Architecture
+
+The project follows a modular, component-based architecture:
+
+- **src/components:** Reusable UI elements built as Lit components (e.g., buttons, navigation, game boards).
+- **src/scripts:** Game logic separated from the UI for better maintainability and testability.
+- **src/pages:** HTML entry points for different games.
+- **src/styles:** Global and component-specific styling using CSS variables and Tailwind.
+- **assets:** Static assets like images and icons.
+
+## 💻 How to Run Locally
+
+### 1. Clone the repository
+
+```bash
+git clone <repository-url>
+cd milestone-2-denidarta
+```
+
+### 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-### Development Server
-
-Start the local development server with hot-reload:
+### 3. Start development server
 
 ```bash
 npm run dev
 ```
 
-### Build for Production
+The application will be available at `http://localhost:5173`.
 
-Create an optimized production build:
+## 🤝 How to Contribute
+
+1. **Fork** the project.
+2. **Create** your feature branch (`git checkout -b feature/AmazingFeature`).
+3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`).
+4. **Push** to the branch (`git push origin feature/AmazingFeature`).
+5. **Open** a Pull Request.
+
+## 📦 Build for Production
 
 ```bash
 npm run build
 ```
 
-The output will be in the `dist/` directory.
-
-### Preview Production Build
-
-Locally preview the production build:
-
-```bash
-npm run preview
-```
+The optimized production build will be generated in the `dist/` directory.
