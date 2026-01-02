@@ -17,31 +17,22 @@
   <body>
     <!-- Main Container -->
     <div class="flex-col m-0 max-w-90rem min-h-screen px-8 py-8 mx-0 my-auto">
-      <back-link></back-link>
-      <!-- Title and Level Container -->
-      <div
-        style="
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 2rem;
-          padding: 0 1rem;
-        "
-      >
-        <h1 class="game-title">THAT CARD GAME</h1>
-        <h2 class="game-level">LEVEL: <span id="game-level">10</span></h2>
-      </div>
-      <div>
+      <section id="page-head">
+        <back-link></back-link>
+        <div id="title-container">
+          <h1 class="game-title">THAT CARD GAME</h1>
+          <h2 class="game-level">LEVEL: <span id="game-level">10</span></h2>
+        </div>
         <p id="game-instructions">
           Find a pair of cards with the same image by clicking on them. After
           you find a pair, they will stay face up. If you don't find a pair,
           they will flip back over. You win when you find all pairs and able to
           move up to the next Level.
         </p>
-      </div>
+      </section>
 
       <!-- Game Board -->
-      <div style="display: flex; justify-content: center; align-items: center">
+      <div id="game-board-container">
         <div class="game-board">
           <ul class="card-grid">
             <li class="card">
