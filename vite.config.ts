@@ -10,6 +10,19 @@ const __dirname = path.dirname(__filename);
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, "index.html"),
+        "bulls-and-cows": path.resolve(
+          __dirname,
+          "src/pages/bulls-and-cows.html"
+        ),
+        "rock-paper": path.resolve(__dirname, "src/pages/rock-paper.html"),
+        "flip-card": path.resolve(__dirname, "src/pages/flip-card.html"),
+      },
+    },
+  },
   test: {
     projects: [
       {
