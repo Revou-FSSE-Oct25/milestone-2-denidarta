@@ -15,9 +15,15 @@
   --brand-yellow: #fbff00;
   --brand-yellow-dark: #e6ea00;
   --brand-yellow-shadow: #c4c700;
+  --gradient-green: linear-gradient(
+    to bottom,
+    #86ef78 0%,
+    #6bcc4d 50%,
+    #41aa28 100%
+  );
 
   /* Colors - Backgrounds */
-  --page-background: rgb(251, 251, 253);
+  --page-background: var(--brand-blue);
   --container-background: #ffffff;
   --game-board-bg: #93f4d8;
   --bg-white-dim: rgba(255, 255, 255, 0.1);
@@ -62,16 +68,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-/* a {
-  font-weight: 500;
-  color: var(--link-color);
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: var(--link-hover);
-} */
 
 body {
   margin: 0;

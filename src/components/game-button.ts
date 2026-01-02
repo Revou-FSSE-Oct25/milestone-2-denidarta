@@ -19,12 +19,7 @@ export class GameButton extends LitElement {
         font-family: var(--game-font);
         border-radius: 16px;
         border: 4px solid #13380c;
-        background: linear-gradient(
-          to bottom,
-          #86ef78 0%,
-          #6bcc4d 50%,
-          #41aa28 100%
-        );
+        background: var(--gradient-green);
         color: white;
         font-size: 2.5rem;
         line-height: 1;
@@ -45,7 +40,7 @@ export class GameButton extends LitElement {
           0px 4px 0 rgba(0, 0, 0, 0.3);
       }
 
-      /* The Gloss Layer */
+      /*  Gloss Effect */
       button::after {
         content: "";
         position: absolute;
@@ -72,7 +67,6 @@ export class GameButton extends LitElement {
         filter: brightness(0.9);
       }
 
-      /* Ensure text is above the gloss */
       span {
         position: relative;
         z-index: 2;

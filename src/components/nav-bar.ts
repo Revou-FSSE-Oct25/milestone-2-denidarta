@@ -36,6 +36,7 @@ export class NavBar extends LitElement {
 
       li {
         font-family: var(--sans-font);
+        user-select: none;
       }
 
       nav {
@@ -80,7 +81,7 @@ export class NavBar extends LitElement {
           <li>About Us</li>
         </ul>
         <div class="button-container">
-          <my-button label="Log In" variant="primary"></my-button>
+          <game-button label="Login"></game-button>
           <my-button label="Create Account" variant="secondary"></my-button>
         </div>
       </nav>

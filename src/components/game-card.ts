@@ -16,7 +16,6 @@ export class gameCard extends LitElement {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem 1.5rem;
       background: var(--container-background);
       border: 1px solid rgba(0, 0, 0, 0.1);
       border-radius: 16px;
@@ -27,6 +26,8 @@ export class gameCard extends LitElement {
       overflow: hidden;
       width: auto;
       height: 100%;
+      max-width: 400px;
+      padding: 8px;
     }
 
     // Top border hover effect.
@@ -71,8 +72,8 @@ export class gameCard extends LitElement {
     .game-card p {
       font-size: 0.9rem;
       color: var(--text-secondary);
-      margin-bottom: 1rem;
       text-align: center;
+      margin-bottom: 8px;
     }
 
     .game-tag {
@@ -83,14 +84,22 @@ export class gameCard extends LitElement {
       color: white;
       font-weight: 500;
     }
+
+    .image-container {
+      display: block;
+      padding: 4px 4px 4px 0px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+    }
   `;
 
   render() {
     return html`
       <a href="${this.href}" class="game-card">
-        <div>
-          ${this.image? `<img src=$this.image} alt=${this.alt} />` : `${this.icon}}
-        </div>
+        ${this.image ? html`<img src=${this.image} alt="Card image" />` : null}
         <h2>${this.title}</h2>
         <p>${this.description}</p>
         <span class="game-tag">${this.tag}</span>
