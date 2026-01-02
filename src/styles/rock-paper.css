@@ -3,71 +3,71 @@
 @tailwind utilities;
 
 body {
-    background-color: #19ABFF;
-    min-height: 100vh;
-    font-family: 'Inter', sans-serif;
-    color: white;
+  background-color: var(--page-background);
+  min-height: 100vh;
+  font-family: var(--sans-font);
+  color: var(--text-white);
 }
 
 .game-title {
-    font-family: 'Barrio', cursive;
-    color: #FBFF00;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0.5rem;
+  font-family: var(--display-font);
+  color: var(--brand-yellow);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  text-shadow: var(--shadow-text);
+  margin-bottom: 0.5rem;
 }
 
 .rps-btn {
-    transition: transform 0.1s;
-    background: white;
-    border: 4px solid #1480BF;
-    border-radius: 1rem;
-    padding: 1.5rem;
-    cursor: pointer;
-    box-shadow: 0 4px 0 #1480BF;
+  transition: transform 0.1s;
+  background: var(--container-background);
+  border: 4px solid var(--brand-blue);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--brand-blue);
 }
 
 .rps-btn:active {
-    transform: translateY(4px);
-    box-shadow: none;
+  transform: translateY(4px);
+  box-shadow: none;
 }
 
 .rps-btn:hover {
-    background: #f0f9ff;
+  background: var(--bg-hover-light);
 }
 
 .rps-icon {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 .result-container {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 1rem;
+  background: var(--bg-white-dim);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--border-white-dim);
+  border-radius: 1rem;
 }
 
 .history-item {
-    background: rgba(255, 255, 255, 0.9);
-    color: #333;
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    animation: slideIn 0.3s ease-out;
+  background: var(--bg-white-dim-strong);
+  color: #333;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  animation: slideIn 0.3s ease-out;
 }
 
 @keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

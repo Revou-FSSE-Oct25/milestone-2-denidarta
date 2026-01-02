@@ -1,120 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Barrio&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/src/styles/flip-card.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barriecito&family=Barrio&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/flip-card.css" />
     <title>RevoFun: That Card Game</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Main Container -->
-    <div
-        style="display: flex; flex-direction: column; min-height: 100vh; max-width: 90rem; margin: 0 auto; padding: 2rem 3rem;">
-
-        <!-- Back to Home Link -->
-        <div style="margin-bottom: 1.5rem;">
-            <a href="/" class="home-link  text-white hover:text-yellow-300 transition-colors mb-4 font-bold "
-                id="back-to-home">
-                Back To Game Hub
-            </a>
+    <div class="flex-col m-0 max-w-90rem min-h-screen px-8 py-8 mx-0 my-auto">
+      <section id="page-head">
+        <back-link></back-link>
+        <div id="title-container">
+          <h1 class="game-title">THAT CARD GAME</h1>
+          <h2 class="game-level">LEVEL: <span id="game-level">10</span></h2>
         </div>
+        <p id="game-instructions">
+          Find a pair of cards with the same image by clicking on them. After
+          you find a pair, they will stay face up. If you don't find a pair,
+          they will flip back over. You win when you find all pairs and able to
+          move up to the next Level.
+        </p>
+      </section>
 
-        <!-- Title and Level Container -->
-        <div
-            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding: 0 1rem;">
-            <h1 class="game-title">
-                THAT CARD GAME
-            </h1>
-            <h2 class="game-level">
-                LEVEL: <span id="game-level">10</span>
-            </h2>
+      <!-- Game Board -->
+      <div id="game-board-container">
+        <div class="game-board">
+          <ul class="card-grid">
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+
+            <!-- Row 3 -->
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+
+            <!-- Row 4 -->
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+            <li class="card">
+              <img src="/assets/card-game/card_back.png" alt="Card" />
+            </li>
+          </ul>
         </div>
-        <div>
-            <p id="game-instructions">Find a pair of cards with the same image by clicking on them. After you find a
-                pair, they will stay face up. If you don't find a pair, they will flip back over. You win when you find
-                all pairs and able to move up to the next Level.</p>
-        </div>
-
-        <!-- Game Board -->
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <div class="game-board">
-                <ul class="card-grid">
-
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-
-                    <!-- Row 3 -->
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-
-                    <!-- Row 4 -->
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                    <li class="card">
-                        <img src="/assets/card-game/card_back.png" alt="Card">
-                    </li>
-                </ul>
-            </div>
-        </div>
+      </div>
     </div>
 
-    <script type="module" src="/src/scripts/flip-card/flip-card-logic.ts"></script>
-</body>
-
+    <script
+      type="module"
+      src="/src/scripts/flip-card/flip-card-main.ts"
+    ></script>
+    <script type="module" src="../main.ts"></script>
+  </body>
 </html>

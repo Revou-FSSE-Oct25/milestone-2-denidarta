@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Component Preview</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barriecito&family=Barrio&family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles/style.css" />
+  </head>
+
+  <style>
+    body {
+      background-color: var(--page-background);
+    }
+  </style>
+  <body>
+    <nav-bar></nav-bar>
+    <div>
+      <game-card
+        title="Bulls and Cows"
+        description="example of game description"
+        image="./assets/game-poster/bulls-and-cows.webp"
+      >
+      </game-card>
+      <game-card
+        title="Game Title"
+        description="example of game description"
+        image="./assets/game-poster/bulls-and-cows.webp"
+      >
+      </game-card>
+      <game-card
+        title="Game Title"
+        description="example of game description"
+        image="./assets/game-poster/bulls-and-cows.webp"
+      >
+      </game-card>
+    </div>
+    <game-button label="Play"></game-button>
+    <script type="module" src="src/preview.ts"></script>
+  </body>
+</html>

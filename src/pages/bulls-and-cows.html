@@ -1,71 +1,94 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="/src/styles/bulls-and-cows.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Barriecito&family=Barrio&family=Inter:wght@400;500;700&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Barriecito&family=Barrio&family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Bulls and Cows Game</title>
-    <meta name="description"
-        content="A classic number guessing game. Guess the 4-digit secret number using logic and deduction!" />
-</head>
+    <meta
+      name="description"
+      content="A classic number guessing game. Guess the 4-digit secret number using logic and deduction!"
+    />
+  </head>
 
-<body>
+  <body>
     <div id="app">
-        <div class="game-container">
-            <header class="game-header">
-                <a href="/" class="back-link  text-white hover:text-yellow-300 transition-colors mb-4 font-bold">←
-                    HOME</a>
-                <h1>Bulls & Cows</h1>
-                <p class="game-subtitle">Guess the 4-digit secret number!</p>
-            </header>
+      <div class="game-container">
+        <header class="game-header">
+          <back-link></back-link>
+          <h1>Bulls & Cows</h1>
+          <p class="game-subtitle">Guess the 4-digit secret number!</p>
+        </header>
 
-            <div class="instructions">
-                <h2>How to Play</h2>
-                <ul>
-                    <li>Think of a 4-digit number (digits 1-9, all unique)</li>
-                    <li><strong>BULL</strong> = Correct digit in correct position</li>
-                    <li><strong>COW</strong> = Correct digit in wrong position</li>
-                    <li>You have <strong>11 attempts</strong> to guess the number</li>
-                    <li>Get <strong>4 BULLS</strong> to win!</li>
-                </ul>
-            </div>
-
-            <div class="attempts-display">
-                <span class="attempts-label">ATTEMPTS LEFT:</span>
-                <span id="attempts-count" class="attempts-count">11</span>
-            </div>
-
-            <div class="input-section">
-                <!-- Using type="text" pattern="\d*" to ensure number keyboard mobile but allow maxLength -->
-                <input type="text" inputmode="numeric" id="guess-input" class="guess-input" maxlength="4"
-                    placeholder="????" autocomplete="off" />
-            </div>
-
-            <button id="submit-btn" class="btn btn-primary"
-                style="width: 100%; max-width: 200px; margin: 0 auto; display: block;">GUESS!</button>
-
-            <div id="input-error" class="input-error" style="display: none; margin-top: 1rem;"></div>
-
-            <div id="game-message" class="game-message" style="display: none; margin-top: 1rem;"></div>
-
-            <div class="history-section">
-                <h3>YOUR GUESSES</h3>
-                <div id="result-history" class="result-history"></div>
-            </div>
-
-            <button id="restart-btn" class="btn btn-secondary">NEW GAME</button>
+        <div class="instructions">
+          <h2>How to Play</h2>
+          <ul>
+            <li>Think of a 4-digit number (digits 1-9, all unique)</li>
+            <li><strong>BULL</strong> = Correct digit in correct position</li>
+            <li><strong>COW</strong> = Correct digit in wrong position</li>
+            <li>You have <strong>11 attempts</strong> to guess the number</li>
+            <li>Get <strong>4 BULLS</strong> to win!</li>
+          </ul>
         </div>
+
+        <div class="attempts-display">
+          <span class="attempts-label">ATTEMPTS LEFT:</span>
+          <span id="attempts-count" class="attempts-count">11</span>
+        </div>
+
+        <div class="input-section">
+          <input
+            type="number"
+            inputmode="numeric"
+            id="guess-input"
+            class="guess-input"
+            maxlength="4"
+            placeholder="????"
+            autocomplete="off"
+          />
+        </div>
+
+        <button
+          id="submit-btn"
+          class="btn btn-primary"
+          style="width: 100%; max-width: 200px; margin: 0 auto; display: block"
+        >
+          GUESS!
+        </button>
+
+        <div
+          id="input-error"
+          class="input-error"
+          style="display: none; margin-top: 1rem"
+        ></div>
+
+        <div
+          id="game-message"
+          class="game-message"
+          style="display: none; margin-top: 1rem"
+        ></div>
+
+        <div class="history-section">
+          <h3>YOUR GUESSES</h3>
+          <div id="result-history" class="result-history"></div>
+        </div>
+
+        <button id="restart-btn" class="btn btn-secondary">NEW GAME</button>
+      </div>
     </div>
 
-    <script type="module" src="/src/scripts/bulls-and-cows/bulls-and-cows.ts"></script>
-</body>
-
+    <script
+      type="module"
+      src="/src/scripts/bulls-and-cows/bulls-and-cows.ts"
+    ></script>
+    <script type="module" src="../main.ts"></script>
+  </body>
 </html>
